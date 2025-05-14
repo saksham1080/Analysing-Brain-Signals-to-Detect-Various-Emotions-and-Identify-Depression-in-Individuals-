@@ -71,4 +71,8 @@ scikit-learn==1.2.2
 matplotlib==3.7.1
 seaborn==0.12.2
 ## Video Demonstration
-**Full Project Walkthrough:** [Watch the Video] https://drive.google.com/drive/folders/1jwawQjn5kCHdAOiI7LV0LVTt8hWTcsHd?usp=drive_link
+**Project Walkthrough Video:**  
+[![Watch Video](https://img.shields.io/badge/Google_Drive-Video_Link-blue?logo=google-drive&style=for-the-badge)](YOUR_GOOGLE_DRIVE_LINK_HERE)
+
+**Direct Link:**  
+[`https://drive.google.com/file/d/YOUR_VIDEO_ID/view?usp=sharing`](https://drive.google.com/drive/folders/1jwawQjn5kCHdAOiI7LV0LVTt8hWTcsHd?usp=drive_link)
