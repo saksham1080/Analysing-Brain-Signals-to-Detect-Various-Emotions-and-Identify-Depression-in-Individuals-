@@ -1,35 +1,74 @@
-# Analyzing Brain Signals to Detect Various Emotions and Identify Depression  
+# Analysing Brain Signals to Detect Various Emotions and Identify Depression in Individuals
 
-## Introduction  
-This project explores the use of EEG (Electroencephalogram) brain signals to classify human emotions and eventually identify signs of depression. By leveraging signal processing techniques and machine learning algorithms, this work aims to contribute to the field of mental health analysis through innovative computational approaches.  
+![Brain Signals Visualization](images/banner.png)
 
-## Objectives  
-- Analyze EEG brain signal data to detect and classify emotional states such as happiness, sadness, anger, and fear.  
-- Build a robust system capable of processing brain signals using feature extraction and classification techniques.  
-- Extend the framework to detect depression as a future enhancement.  
+## Project Overview
+This project analyzes electroencephalogram (EEG) signals to classify emotional states and detect potential indicators of depression. Using deep learning techniques, we process spectral features from brain signals to identify patterns corresponding to different emotional states (Negative, Neutral, Positive).
 
-## Features  
-- **Emotion Detection**: Identify emotional states based on EEG signals.  
-- **Machine Learning**: Use advanced algorithms like neural networks for classification.  
-- **Signal Processing**: Implement techniques like time-frequency analysis and feature extraction to analyze EEG data.  
-- **Future Scope**: Extend functionality to include depression detection for mental health insights.  
+## Key Features
+- 3-class emotion classification system
+- Comparative analysis of LSTM, GRU, and DNN models
+- Spectral feature analysis of EEG signals
+- Depression risk assessment through emotional pattern recognition
 
-## Technologies Used  
-- **Programming Languages**: Python  
-- **Libraries**: NumPy, Pandas, SciPy, Scikit-learn, TensorFlow/Keras  
-- **Signal Processing Tools**: PyEEG, MNE  
-- **Machine Learning Models**: SVM, Decision Trees, Neural Networks  
+## Dataset
+- Contains spectral features from EEG signals
+- 2,548 frequency-domain features per sample
+- 3 balanced emotional classes: 
+  - Negative 😠 
+  - Neutral 😐 
+  - Positive 😃
+- Sample visualization of spectral features:
 
-## Dataset  
-The project uses publicly available EEG datasets such as:  
-1. **DEAP Dataset**: A dataset for emotion analysis using EEG, physiological, and video signals.  
-2. **SEED Dataset**: A dataset for emotion classification using EEG signals.  
+![EEG Feature Visualization](images/feature_visualization.png)
 
-*(Ensure compliance with dataset licenses while using this project.)*  
+## Methodology
+### Model Architectures
+1. **LSTM Network**
+   - 256 LSTM units
+   - Dropout and Batch Normalization
+   - Test Accuracy: 96.4%
 
-## Installation and Usage  
-### Prerequisites  
-- Python 3.7 or later  
-- Install dependencies using:  
-  ```bash
-  pip install -r requirements.txt
+2. **GRU Network**
+   - 256 GRU units
+   - Similar regularization to LSTM
+   - Test Accuracy: 95.8%
+
+3. **Deep Neural Network**
+   - 5 hidden layers (2548-5096 units)
+   - Progressive dropout regularization
+   - Test Accuracy: 94.2%
+
+### Training Process
+- Adam optimizer with exponential learning rate decay
+- Early stopping with model checkpointing
+- Class-balanced training through stratified sampling
+
+## Results
+### Performance Comparison
+| Model | Accuracy | Precision | Recall | F1-Score |
+|-------|----------|-----------|--------|----------|
+| LSTM  | 96.4%    | 0.96      | 0.96   | 0.96     |
+| GRU   | 95.8%    | 0.96      | 0.96   | 0.96     |
+| DNN   | 94.2%    | 0.94      | 0.94   | 0.94     |
+
+### Confusion Matrices
+![Model Confusion Matrices](images/confusion_matrices.png)
+
+## Installation
+```bash
+git clone https://github.com/yourusername/brain-emotion-analysis.git
+cd brain-emotion-analysis
+
+# Install requirements
+pip install -r requirements.txt
+
+# Required libraries
+numpy==1.23.5
+pandas==1.5.3
+tensorflow==2.12.0
+scikit-learn==1.2.2
+matplotlib==3.7.1
+seaborn==0.12.2
+## Video Demonstration
+**Full Project Walkthrough:** [Watch the Video] https://drive.google.com/drive/folders/1jwawQjn5kCHdAOiI7LV0LVTt8hWTcsHd?usp=drive_link
